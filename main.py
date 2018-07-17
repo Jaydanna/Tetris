@@ -26,6 +26,7 @@ def main():
         
         screen.fill(bg_color)
         draw_game_area(screen)
+        draw_cell(screen,GAME_AREA_LEFT+GAME_AREA_WIDTH/2,GAME_AREA_TOP)
         pygame.display.flip()
 
 def draw_game_area(screen):
@@ -47,6 +48,13 @@ def draw_game_area(screen):
 
     for c in range(11):
         pygame.draw.line(screen,EDGE_COLOR,(GAME_AREA_LEFT + c*CELL_WIDTH,GAME_AREA_TOP),(GAME_AREA_LEFT + c*CELL_WIDTH,GAME_AREA_TOP+GAME_AREA_HEIGHT))
+
+def draw_cell(screen,left,top):
+    cell_left_top = (left,top)
+    cell_width_height = (CELL_WIDTH,CELL_WIDTH)
+    cell_rect = pygame.Rect(cell_left_top,cell_width_height)
+    pygame.draw.rect(screen,CELL_COLOR,cell_rect)
+
 
 if __name__=='__main__':
     main()
