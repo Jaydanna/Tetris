@@ -25,10 +25,28 @@ def main():
                 sys.exit()
         
         screen.fill(bg_color)
+        draw_game_area(screen)
         pygame.display.flip()
 
 def draw_game_area(screen):
-    pygame.draw.line(screen,BG_COLOR,(GAME_AREA_WIDTH),(200,200))
+    # ##top line
+    # pygame.draw.line(screen,EDGE_COLOR,(GAME_AREA_LEFT,GAME_AREA_TOP),
+    #                 (GAME_AREA_LEFT+GAME_AREA_WIDTH,GAME_AREA_TOP))
+    # ##button line
+    # pygame.draw.line(screen,EDGE_COLOR,(GAME_AREA_LEFT,GAME_AREA_HEIGHT+GAME_AREA_TOP),
+    #                 (GAME_AREA_LEFT+GAME_AREA_WIDTH,GAME_AREA_HEIGHT+GAME_AREA_TOP)
+    # ##left line
+    # pygame.draw.line(screen,EDGE_COLOR,(GAME_AREA_LEFT,GAME_AREA_TOP),
+    #                 (GAME_AREA_LEFT,GAME_AREA_TOP+GAME_AREA_HEIGHT))
+    # ##right line
+    # pygame.draw.line(screen,EDGE_COLOR,(GAME_AREA_LEFT+GAME_AREA_WIDTH,GAME_AREA_TOP),
+    #                 (GAME_AREA_LEFT+GAME_AREA_WIDTH,GAME_AREA_TOP+GAME_AREA_HEIGHT))
+
+    for r in range(21):
+        pygame.draw.line(screen,EDGE_COLOR,(GAME_AREA_LEFT,GAME_AREA_TOP + r*CELL_WIDTH),(GAME_AREA_LEFT+GAME_AREA_WIDTH,GAME_AREA_TOP + r * CELL_WIDTH))
+
+    for c in range(11):
+        pygame.draw.line(screen.EDGE_COLOR,(GAME_AREA_LEFT + c*CELL_WIDTH,GAME_AREA_TOP),(GAME_AREA_LEFT + c*CELL_WIDTH,GAME_AREA_TOP+GAME_AREA_HEIGHT))
 
 if __name__=='__main__':
     main()
