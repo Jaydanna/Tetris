@@ -1,16 +1,7 @@
 import sys
 import pygame
-
-SCREEN_WIDTH = 1200
-SCREEN_HEIGHT = 900
-CELL_WIDTH = 40
-GAME_AREA_WIDTH = CELL_WIDTH * 10
-GAME_AREA_HEIGHT = CELL_WIDTH * 20
-GAME_AREA_LEFT = (SCREEN_WIDTH - GAME_AREA_WIDTH) // 2
-GAME_AREA_TOP = SCREEN_HEIGHT - GAME_AREA_HEIGHT
-EDGE_COLOR = (0,0,0)
-CELL_COLOR = (100,100,100)
-BG_COLOR = (230,230,230)
+from setting import *
+from piece import Piece
 
 def main():
     pygame.init()
@@ -18,7 +9,7 @@ def main():
     pygame.display.set_caption('Tetris!')
 
     bg_color = BG_COLOR
-
+    piece = Piece('S',screen)
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -26,7 +17,7 @@ def main():
         
         screen.fill(bg_color)
         draw_game_area(screen)
-        draw_cell(screen,GAME_AREA_LEFT+GAME_AREA_WIDTH/2,GAME_AREA_TOP)
+        piece.paint()
         pygame.display.flip()
 
 def draw_game_area(screen):
@@ -48,12 +39,6 @@ def draw_game_area(screen):
 
     for c in range(11):
         pygame.draw.line(screen,EDGE_COLOR,(GAME_AREA_LEFT + c*CELL_WIDTH,GAME_AREA_TOP),(GAME_AREA_LEFT + c*CELL_WIDTH,GAME_AREA_TOP+GAME_AREA_HEIGHT))
-
-def draw_cell(screen,left,top):
-    cell_left_top = (left,top)
-    cell_width_height = (CELL_WIDTH,CELL_WIDTH)
-    cell_rect = pygame.Rect(cell_left_top,cell_width_height)
-    pygame.draw.rect(screen,CELL_COLOR,cell_rect)
 
 
 if __name__=='__main__':
