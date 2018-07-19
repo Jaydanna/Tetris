@@ -9,7 +9,7 @@ def main():
     pygame.display.set_caption('Tetris!')
 
     bg_color = BG_COLOR
-    piece = Piece('S',screen)
+    piece = Piece('T',screen)
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

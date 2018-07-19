@@ -11,32 +11,29 @@ BG_COLOR = (230,230,230)
 
 ##Shape
 S_SHAPE_TEMPLATE = ['.OO.',
-                    'OO..',
-                    '....']
+                    'OO..']
 
-Z_SHAPE_TEMPLATE = ['OO..',
-                     '.OO.',
-                     '....'] 
+Z_SHAPE_TEMPLATE = ['OO.',
+                    '.OO']
 
-I_SHAPE_TEMPLATE = ['.O..',
-                     '.O..',
-                     '.O..',
-                     '.O..']
+I_SHAPE_TEMPLATE = ['.O',
+                    '.O',
+                    '.O',
+                    '.O']
 
 O_SHAPE_TEMPLATE = ['OO',
-                     'OO']
+                    'OO']
 
 J_SHAPE_TEMPLATE = ['..O.',
-                     '..O.',
-                     '.OO.']
+                    '..O.',
+                    '.OO.']
 
 L_SHAPE_TEMPLATE = ['.O..',
-                     '.O..',
-                     '.OO.']
+                    '.O..',
+                    '.OO.']
 
 T_SHAPE_TEMPLATE = ['.O..',
-                     'OOO.',
-                     '....']
+                    'OOO.']
 
 PIECES = {'S': S_SHAPE_TEMPLATE,
           'Z': Z_SHAPE_TEMPLATE,
