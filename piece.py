@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
 from setting import *
 import pygame
 from pygame import *
@@ -39,7 +42,11 @@ class Piece():
         if self.can_move_button():
             self.y += 1
         else:
-            self.is_on_button = True
+            self.is_on_buttom = True
+    
+    def fall_down(self):
+        while not self.is_on_buttom:
+            self.move_down()
 
     def can_move_right(self):
         shape_mtx = PIECES[self.shape][self.turn_times]
