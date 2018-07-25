@@ -7,7 +7,7 @@ import random
 import time
 from setting import *
 from piece import Piece
-from GameWall import *
+from gamewall import *
 
 def main():
     pygame.init()
